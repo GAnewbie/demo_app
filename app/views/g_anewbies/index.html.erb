@@ -1,0 +1,29 @@
+<h1>Listing g_anewbies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @g_anewbies.each do |g_anewby| %>
+      <tr>
+        <td><%= g_anewby.name %></td>
+        <td><%= g_anewby.email %></td>
+        <td><%= link_to 'Show', g_anewby %></td>
+        <td><%= link_to 'Edit', edit_g_anewby_path(g_anewby) %></td>
+        <td><%= link_to 'Destroy', g_anewby, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New G anewbie', new_g_anewby_path %>
